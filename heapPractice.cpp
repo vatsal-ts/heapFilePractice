@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 #define gc getchar_unlocked
+
 #define fo(i, n) for (auto i = 0; i < n; i++)
 #define Fo(i, k, n) for (auto i = k; k < n ? i < n : i > n; k < n ? i += 1 : i -= 1)
 #define ll long long
@@ -179,6 +181,10 @@ int main()
             cin >> record_size >> primary_key;
             myFile.insert(record_size, primary_key);
         }
+        else if (input == 2) // status
+        {
+            myFile.status();
+        }
         else if (input == 3) // search
         {
             int primary_key;
@@ -186,10 +192,6 @@ int main()
             pair<int, int> ans = {-1, -1};
             ans = myFile.search(primary_key);
             cout << ans.first << " " << ans.second << "\n";
-        }
-        else if (input == 2) // status
-        {
-            myFile.status();
         }
         else
             i = -1;
